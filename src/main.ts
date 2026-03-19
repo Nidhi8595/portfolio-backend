@@ -13,7 +13,7 @@ async function bootstrap() {
   app.enableCors({
     origin: [
       'http://localhost:4200',       // Angular dev server
-      'https://your-portfolio.vercel.app'  // Replace with your deployed URL later
+      'https://portfolio-backend-yltt.onrender.com'  // Replace with your deployed URL later
     ],
     methods: ['GET', 'POST'],
     credentials: true,
