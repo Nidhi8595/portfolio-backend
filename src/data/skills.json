@@ -1,0 +1,26 @@
+[
+  {
+    "category": "Languages",
+    "items": ["C++", "JavaScript", "C", "Java", "Python"]
+  },
+  {
+    "category": "Frontend",
+    "items": ["HTML", "CSS", "TypeScript", "React.js", "Redux.js", "Tailwind", "Angular.js"]
+  },
+  {
+    "category": "Backend",
+    "items": ["Node.js", "Express.js", "NestJS", "Django"]
+  },
+  {
+    "category": "Databases",
+    "items": ["MongoDB", "MySQL", "PostgreSQL"]
+  },
+  {
+    "category": "Tools & Platforms",
+    "items": ["GitHub", "Firebase", "Render", "Vercel", "Docker", "AWS", "ClaudeAI", "Git","Canva" ,"VS Code", "Postman", "Insomnia","Github Pages"]
+  },
+  {
+    "category": "Other Concepts",
+    "items": ["APIs", "Authentication", "OOPs", "Data Structures", "Cloud Basics", "Cybersec Basics", "Design Thinking", "PrismaORM", "Testing", "Deployment"]
+  }
+]

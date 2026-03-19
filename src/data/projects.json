@@ -1,0 +1,358 @@
+[
+  {
+    "id": 1,
+    "title": "MarkSphere",
+    "description": "Save your bookmarks efficiently with a full-stack bookmark manager",
+    "image": "MarkSphere.png",
+    "liveUrl": "https://swiftmark-forge-main.vercel.app",
+    "githubUrl": "https://github.com/Nidhi8595/nest-js-learning",
+    "skills": [
+      "React.js",
+      "NestJS",
+      "TypeScript",
+      "PostgreSQL",
+      "Docker",
+      "Tailwind",
+      "PrismaORM",
+      "Node.js",
+      "CSS",
+      "APIs",
+      "Deployment",
+      "Authentication",
+      "Render",
+      "Vercel",
+      "Github",
+      "Git",
+      "VS Code",
+      "Postman",
+      "Insomnia",
+      "Testing"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Personal Portfolio Website",
+    "description": "Showcase your skills and projects in a professional manner",
+    "image": "Portfolio.png",
+    "liveUrl": "https://nidhi8595.github.io/HTML_CSS_PROJECTS/Portfolio/",
+    "githubUrl": "https://github.com/Nidhi8595/HTML_CSS_PROJECTS/tree/main/Portfolio",
+    "skills": [
+      "CSS",
+      "HTML",
+      "Github",
+      "Git",
+      "VS Code",
+      "Deployment",
+      "GitHub Pages",
+      "JavaScript"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Scalable Notes App",
+    "description": "Full-stack notes application with scalable REST API backend",
+    "image": "NotesApp.png",
+    "liveUrl": "https://scalable-app-frontend-myh33wkwc-neelakshis-projects.vercel.app/",
+    "githubUrl": "https://github.com/Nidhi8595/Frontend-development-Assignment",
+    "skills": [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Tailwind",
+      "CSS",
+      "JavaScript",
+      "Render",
+      "Vercel",
+      "Github",
+      "Git",
+      "VS Code",
+      "Postman",
+      "Insomnia",
+      "Testing",
+      "Deployment",
+      "APIs"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Weather Snapshots",
+    "description": "Real-time weather app with location-based forecasts",
+    "image": "WeatherApp.png",
+    "liveUrl": "https://nidhi8595.github.io/Web-Development/Weather%20App/",
+    "githubUrl": "https://github.com/Nidhi8595/Web-Development/tree/main/Weather%20App",
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "APIs",
+      "Deployment",
+      "Github",
+      "Git",
+      "VS Code",
+      "Render"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Post Conversation Analysis",
+    "description": "Django-powered tool for analysing post conversation data",
+    "image": "DjangoP.png",
+    "liveUrl": "https://post-conversation-analysis.onrender.com",
+    "githubUrl": "https://github.com/Nidhi8595/post_conversation_analysis",
+    "skills": [
+      "Django",
+      "Python",
+      "Render",
+      "GitHub",
+      "Git",
+      "VS Code",
+      "Postman",
+      "Insomnia",
+      "Testing",
+      "Deployment",
+      "APIs"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Premier Model Management Clone",
+    "description": "A clone of the Premier Model Management platform",
+    "image": "Premier.png",
+    "liveUrl": "https://nidhi8595.github.io/HTML_CSS_PROJECTS/CSS%20RESPONSIVE%20PROJECTS/PREMIER%20Model%20management%20Clone/",
+    "githubUrl": "https://github.com/Nidhi8595/HTML_CSS_PROJECTS/tree/main/CSS%20RESPONSIVE%20PROJECTS/PREMIER%20Model%20management%20Clone",
+    "skills": [
+      "GitHub",
+      "Git",
+      "Github Pages",
+      "VS Code",
+      "Deployment",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "SidCup Family Golf Clone",
+    "description": "A clone of the SidCup Family Golf platform",
+    "image": "SidCup.png",
+    "liveUrl": "https://nidhi8595.github.io/HTML_CSS_PROJECTS/CSS%20RESPONSIVE%20PROJECTS/SidCup%20Family%20Golf%20Clone/",
+    "githubUrl": "https://github.com/Nidhi8595/HTML_CSS_PROJECTS/tree/main/CSS%20RESPONSIVE%20PROJECTS/SidCup%20Family%20Golf%20Clone",
+    "skills": [
+      "GitHub",
+      "Git",
+      "Github Pages",
+      "VS Code",
+      "Deployment",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Myntra Website Clone",
+    "description": "A clone of the Myntra website",
+    "image": "Myntra.png",
+    "liveUrl": "https://nidhi8595.github.io/HTML_CSS_PROJECTS/Myntra%20Clone/",
+    "githubUrl": "https://github.com/Nidhi8595/HTML_CSS_PROJECTS/tree/main/Myntra%20Clone",
+    "skills": [
+      "GitHub",
+      "Git",
+      "Github Pages",
+      "VS Code",
+      "Deployment",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "University website Clone",
+    "description": "A clone of the University website",
+    "image": "Gbu.png",
+    "liveUrl": "https://nidhi8595.github.io/HTML_CSS_PROJECTS/University%20Website%20Clone/",
+    "githubUrl": "https://github.com/Nidhi8595/HTML_CSS_PROJECTS/tree/main/University%20Website%20Clone",
+    "skills": [
+      "GitHub",
+      "Git",
+      "Github Pages",
+      "VS Code",
+      "Deployment",
+      "HTML",
+      "CSS"
+    ]
+  },{
+    "id": 10,
+    "title": "Dribbble website Clone",
+    "description": "A clone of the Dribbble website",
+    "image": "Dribbble.png",
+    "liveUrl": "https://nidhi8595.github.io/HTML_CSS_PROJECTS/CSS%20RESPONSIVE%20PROJECTS/Dribbble%20Clone/",
+    "githubUrl": "https://github.com/Nidhi8595/HTML_CSS_PROJECTS/tree/main/CSS%20RESPONSIVE%20PROJECTS/Dribbble%20Clone",
+    "skills": [
+      "GitHub",
+      "Git",
+      "Github Pages",
+      "VS Code",
+      "Deployment",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "AgeBloom (Age Calculator)",
+    "description": "calculating age",
+    "image": "AgeBloom.png",
+    "liveUrl": "https://nidhi8595.github.io/CodeAlpha_AgeCalculator/#landing",
+    "githubUrl": "https://github.com/Nidhi8595/CodeAlpha_AgeCalculator",
+    "skills": [
+      "GitHub",
+      "Git",
+      "Github Pages",
+      "VS Code",
+      "Deployment",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "SmartCalc (Calculator App)",
+    "description": "calculater app with basic and scientific functions",
+    "image": "SmartCalc.png",
+    "liveUrl": "https://nidhi8595.github.io/CodeAlpha_Calculator/",
+    "githubUrl": "https://github.com/Nidhi8595/CodeAlpha_Calculator",
+    "skills": [
+      "GitHub",
+      "Git",
+      "Github Pages",
+      "VS Code",
+      "Deployment",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Whiskers & Wildflowers Gallery",
+    "description": "A gallery for showcasing whiskers and wildflowers",
+    "image": "PhotoGallery.png",
+    "liveUrl": "https://nidhi8595.github.io/CodeAlpha_ImageGallery/",
+    "githubUrl": "https://github.com/Nidhi8595/CodeAlpha_ImageGallery",
+    "skills": [
+      "GitHub",
+      "Git",
+      "Github Pages",
+      "VS Code",
+      "Deployment",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Live Search",
+    "description": "A live search feature for real-time search results",
+    "image": "Search Bar.png",
+    "liveUrl": "https://nidhi8595.github.io/Learning_JavaScript/Search%20Bar%20Showing%20Live%20results/",
+    "githubUrl": "https://github.com/Nidhi8595/Learning_JavaScript/tree/main/Search%20Bar%20Showing%20Live%20results",
+    "skills": [
+      "GitHub",
+      "Git",
+      "Github Pages",
+      "VS Code",
+      "Deployment",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Progress Bar",
+    "description": "A progress bar that specifies the loading percentage",
+    "image": "Progress Bar.png",
+    "liveUrl": "https://nidhi8595.github.io/Learning_JavaScript/Progress%20Bar%20Detailed/",
+    "githubUrl": "https://github.com/Nidhi8595/Learning_JavaScript/tree/main/Progress%20Bar%20Detailed",
+    "skills": [
+      "GitHub",
+      "Git",
+      "Github Pages",
+      "VS Code",
+      "Deployment",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ]
+  },
+  {
+    "id": 16,
+    "title": "Swap Images",
+    "description": "A feature to swap images on hover",
+    "image": "Swap images.png",
+    "liveUrl": "https://nidhi8595.github.io/Learning_JavaScript/Swap%20images",
+    "githubUrl": "https://github.com/Nidhi8595/Learning_JavaScript/tree/main/Swap%20images",
+    "skills": [
+      "GitHub",
+      "Git",
+      "Github Pages",
+      "VS Code",
+      "Deployment",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ]
+  },
+  {
+    "id": 17,
+    "title": "Add or Remove Items",
+    "description": "A feature to add or remove items from a list",
+    "image": "Add or Remove.png",
+    "liveUrl": "https://nidhi8595.github.io/Learning_JavaScript/Add%20and%20Remove%20Items",
+    "githubUrl": "https://github.com/Nidhi8595/Learning_JavaScript/tree/main/Add%20and%20Remove%20Items",
+    "skills": [
+      "GitHub",
+      "Git",
+      "Github Pages",
+      "VS Code",
+      "Deployment",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ]
+  },
+  {
+    "id": 18,
+    "title": "Netflix GPT",
+    "description": "AI-powered Netflix clone with GPT movie recommendations",
+    "image": "Netflix.png",
+    "liveUrl": null,
+    "githubUrl": "https://github.com/Nidhi8595/netflix-gpt",
+    "skills": [
+      "React.js",
+      "Node.js",
+      "MongoDB",
+      "Redux.js",
+      "Firebase",
+      "Tailwind",
+      "Express.js",
+      "CSS",
+      "APIs",
+      "Deployment",
+      "Github",
+      "Git",
+      "VS Code",
+      "Postman",
+      "Insomnia",
+      "Testing",
+      "JavaScript"
+    ]
+  }
+]

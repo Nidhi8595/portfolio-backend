@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "degree": "BTech Computer Science & Engineering",
+    "institution": "Gautam Buddha University",
+    "grade": "8.79 CGPA",
+    "year": "2022 – 2026",
+    "board": null
+  },
+  {
+    "id": 2,
+    "degree": "Senior Secondary — Science with CS",
+    "institution": "DSR Modern School, Noida",
+    "grade": "92%",
+    "year": "2020 – 2022",
+    "board": "CBSE"
+  },
+  {
+    "id": 3,
+    "degree": "High School — Mathematics & CS",
+    "institution": "St. Mary's Convent School Haldaur",
+    "grade": "90.2%",
+    "year": "2018 – 2020",
+    "board": "ICSE"
+  }
+]

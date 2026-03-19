@@ -1,0 +1,119 @@
+[
+  {
+    "id": 1,
+    "title": "Accenture Nordics — Software Engineering Job Simulation",
+    "issuer": "Accenture",
+    "image": "Accenture.png",
+    "certificateUrl": "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/xhih9yFWsf6AYfngd/HNpZwZcuYwona2d8Y_xhih9yFWsf6AYfngd_d7A5q3nxxWjgfhEAk_1749121804593_completion_certificate.pdf",
+    "badgeUrl": null,
+    "type": "simulation"
+  },
+  {
+    "id": 2,
+    "title": "Advanced Software Engineering Job Simulation",
+    "issuer": "Walmart",
+    "image": "Walmart.png",
+    "certificateUrl": "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/prBZoAihniNijyD6d/oX6f9BbCL9kJDJzfg_prBZoAihniNijyD6d_d7A5q3nxxWjgfhEAk_1749075486618_completion_certificate.pdf",
+    "badgeUrl": null,
+    "type": "simulation"
+  },
+  {
+    "id": 3,
+    "title": "Introduction to Cloud",
+    "issuer": "IBM Cognitive Class",
+    "image": "CloudCertificate.png",
+    "certificateUrl": "https://courses.cognitiveclass.ai/certificates/125feb86e3054c80a998c28c00710f75",
+    "badgeUrl": "https://www.credly.com/badges/f87f63e0-b75b-46d2-a1d9-23ec40ba5f6d/linked_in_profile",
+    "type": "course"
+  },
+  {
+    "id": 4,
+    "title": "Introduction to Cybersecurity",
+    "issuer": "Cisco NetAcad",
+    "image": "CyberSec.png",
+    "certificateUrl": "https://www.netacad.com/certificates?issuanceId=59478c78-b7dd-4a11-9a50-7739b34596eb",
+    "badgeUrl": "https://www.credly.com/badges/1d8d39e1-0d32-46e4-8fdf-0bc7dc9f21b1/public_url",
+    "type": "course"
+  },
+  {
+    "id": 5,
+    "title": "Design Thinking for Beginners",
+    "issuer": "Simplilearn",
+    "image": "DesignThinking.png",
+    "certificateUrl": "https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIxNzgwIiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODM4ODczOV84NzQ1NjIwMTc0ODIwMzUyMjQzMy5wbmciLCJ1c2VybmFtZSI6Ik5lZWxha3NoaSJ9",
+    "badgeUrl": null,
+    "type": "course"
+  },
+  {
+    "id": 6,
+    "title": "TechTank StartUp Challenge",
+    "issuer": "TechTank",
+    "image": "TechTank.png",
+    "certificateUrl": "https://www.linkedin.com/in/neelakshi-2b3725321/details/certifications/",
+    "badgeUrl": null,
+    "type": "achievement"
+  },
+  {
+    "id": 7,
+    "title": "LeetCode 100-Days Badge",
+    "issuer": "LeetCode",
+    "image": "LeetCode100.png",
+    "certificateUrl": "https://leetcode.com/u/Neelakshi_123/",
+    "badgeUrl": "https://leetcode.com/medal/?showImg=1",
+    "type": "badge"
+  },
+  {
+    "id": 8,
+    "title": "LeetCode 50-Days Badge",
+    "issuer": "LeetCode",
+    "image": "Leetcode 50-days Badge.png",
+    "certificateUrl": "https://leetcode.com/u/Neelakshi_123/",
+    "badgeUrl": "https://leetcode.com/medal/?showImg=0&id=5770704&isLevel=false",
+    "type": "badge"
+  },
+  {
+    "id": 9,
+    "title": "LeetCode 50-Days Badge 2",
+    "issuer": "LeetCode",
+    "image": "Leetcode 50-days badge 2.png",
+    "certificateUrl": "https://leetcode.com/u/Neelakshi_123/",
+    "badgeUrl": "https://leetcode.com/medal/?showImg=0&id=6270549&isLevel=false",
+    "type": "badge"
+  },
+  {
+    "id": 10,
+    "title": "C++ Skills Assessment",
+    "issuer": "CodeChef",
+    "image": "C++Skills.png",
+    "certificateUrl": "https://www.linkedin.com/in/neelakshi-2b3725321/details/certifications/1745345006290/single-media-viewer/?profileId=ACoAAFFxaWcBft0k-Sszi_72bWL-SIo8B5CKyrU",
+    "badgeUrl": "https://www.linkedin.com/in/neelakshi-2b3725321/details/certifications/1745345006290/single-media-viewer/?profileId=ACoAAFFxaWcBft0k-Sszi_72bWL-SIo8B5CKyrU",
+    "type": "assessment"
+  },
+  {
+    "id": 11,
+    "title": "Java Skills Assessment",
+    "issuer": "CodeChef",
+    "image": "JavaSkills.png",
+    "certificateUrl": "https://www.linkedin.com/in/neelakshi-2b3725321/details/certifications/1745347958756/single-media-viewer/?profileId=ACoAAFFxaWcBft0k-Sszi_72bWL-SIo8B5CKyrU",
+    "badgeUrl": "https://www.linkedin.com/in/neelakshi-2b3725321/details/certifications/1745347958756/single-media-viewer/?profileId=ACoAAFFxaWcBft0k-Sszi_72bWL-SIo8B5CKyrU",
+    "type": "assessment"
+  },
+  {
+    "id": 12,
+    "title": "C Skills Assessment",
+    "issuer": "CodeChef",
+    "image": "CSkills.png",
+    "certificateUrl": "https://www.linkedin.com/in/neelakshi-2b3725321/details/certifications/1745482392335/single-media-viewer/?profileId=ACoAAFFxaWcBft0k-Sszi_72bWL-SIo8B5CKyrU",
+    "badgeUrl": "https://www.linkedin.com/in/neelakshi-2b3725321/details/certifications/1745482392335/single-media-viewer/?profileId=ACoAAFFxaWcBft0k-Sszi_72bWL-SIo8B5CKyrU",
+    "type": "assessment"
+  },
+  {
+    "id": 13,
+    "title": "Python Skills Assessment",
+    "issuer": "CodeChef",
+    "image": "PythonSkills.png",
+    "certificateUrl": "https://www.linkedin.com/in/neelakshi-2b3725321/details/certifications/1745350427039/single-media-viewer/?profileId=ACoAAFFxaWcBft0k-Sszi_72bWL-SIo8B5CKyrU",
+    "badgeUrl": "https://www.linkedin.com/in/neelakshi-2b3725321/details/certifications/1745350427039/single-media-viewer/?profileId=ACoAAFFxaWcBft0k-Sszi_72bWL-SIo8B5CKyrU",
+    "type": "assessment"
+  }
+]
