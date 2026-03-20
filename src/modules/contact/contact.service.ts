@@ -10,9 +10,7 @@ export class ContactService {
   private readonly transporter: nodemailer.Transporter;
 
   constructor(private configService: ConfigService) {
- // Temporary debug — remove after confirming
-  console.log('GMAIL_USER:', this.configService.get('GMAIL_USER'));
-  console.log('GMAIL_PASS:', this.configService.get('GMAIL_PASS') ? 'LOADED' : 'MISSING');
+ 
     // Create reusable transporter using Gmail SMTP
     this.transporter = nodemailer.createTransport({
       service: 'gmail',
