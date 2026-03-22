@@ -49,7 +49,8 @@ export class ContactService {
 
     
 this.transporter = nodemailer.createTransport({
-  host:   'smtp.gmail.com',
+    host:   '74.125.28.108',  // gmail smtp IPv4 direct — bypasses IPv6 DNS
+
   port:   587,
   secure: false,
   auth: {
@@ -58,9 +59,9 @@ this.transporter = nodemailer.createTransport({
   },
   tls: {
     rejectUnauthorized: false,
-    ciphers: 'SSLv3'
+        servername: 'smtp.gmail.com', // needed when using IP instead of hostname
+
   },
-  family: 4,
 } as nodemailer.TransportOptions);
     this.transporter.verify((error) => {
       if (error) {
