@@ -207,9 +207,15 @@ export class ContactService {
         success: true,
         message: `Message received! I'll get back to you at ${dto.email} soon.`
       };
+    }
+    // } catch (error) {
+    //   this.logger.error('❌ Failed to send email:', error);
+      catch (error: any) {
+  console.log('EMAIL ERROR CODE:   ', error.code);
+  console.log('EMAIL ERROR MESSAGE:', error.message);
+  console.log('EMAIL ERROR COMMAND:', error.command);
+  console.log('FULL ERROR:        ', JSON.stringify(error, null, 2));
 
-    } catch (error) {
-      this.logger.error('❌ Failed to send email:', error);
 
       return {
         success: false,
