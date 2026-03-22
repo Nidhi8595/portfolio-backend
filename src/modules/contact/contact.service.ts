@@ -9,31 +9,63 @@ export class ContactService {
   private readonly logger = new Logger(ContactService.name);
   private readonly transporter: nodemailer.Transporter;
 
+  // constructor(private configService: ConfigService) {
+
+  //   // Create reusable transporter using Gmail SMTP
+  //   this.transporter = nodemailer.createTransport({
+  //     host: 'smtp.gmail.com',
+  //     port: 465,
+  //     secure: true,           // true for port 465 (SSL)
+  //     auth: {
+  //       user: this.configService.get<string>('GMAIL_USER'),
+  //       pass: this.configService.get<string>('GMAIL_PASS'),
+  //     },
+  //     tls: {
+  //       rejectUnauthorized: false
+  //     }
+  //   });
+
+  //    this.transporter.verify((error, success) => {
+  //   if (error) {
+  //     this.logger.error('SMTP connection failed:', error.message);
+  //   } else {
+  //     this.logger.log('SMTP connection verified — ready to send emails');
+  //   }
+  // });
+  // }
+
   constructor(private configService: ConfigService) {
 
-    // Create reusable transporter using Gmail SMTP
-    this.transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
-      port: 465,
-      secure: true,           // true for port 465 (SSL)
-      auth: {
-        user: this.configService.get<string>('GMAIL_USER'),
-        pass: this.configService.get<string>('GMAIL_PASS'),
-      },
-      tls: {
-        rejectUnauthorized: false
-      }
-    });
+  const gmailUser = this.configService.get<string>('GMAIL_USER');
+  const gmailPass = this.configService.get<string>('GMAIL_PASS');
+  const recipient = this.configService.get<string>('RECIPIENT_EMAIL');
 
-     this.transporter.verify((error, success) => {
+  // These will appear in Render logs on every startup
+  console.log('=== CONTACT SERVICE INIT ===');
+  console.log('GMAIL_USER:      ', gmailUser      ?? 'UNDEFINED ❌');
+  console.log('GMAIL_PASS:      ', gmailPass      ? 'LOADED ✅' : 'UNDEFINED ❌');
+  console.log('RECIPIENT_EMAIL: ', recipient      ?? 'UNDEFINED ❌');
+  console.log('============================');
+
+  this.transporter = nodemailer.createTransport({
+    host:   'smtp.gmail.com',
+    port:   465,
+    secure: true,
+    auth: {
+      user: gmailUser,
+      pass: gmailPass,
+    },
+    tls: { rejectUnauthorized: false }
+  });
+
+  this.transporter.verify((error) => {
     if (error) {
-      this.logger.error('SMTP connection failed:', error.message);
+      console.log('SMTP VERIFY FAILED ❌:', error.message);
     } else {
-      this.logger.log('SMTP connection verified — ready to send emails');
+      console.log('SMTP VERIFY SUCCESS ✅ — ready to send emails');
     }
   });
-  }
-
+}
   async sendMessage(dto: ContactDto): Promise<{ success: boolean; message: string }> {
     const recipient = this.configService.get<string>('RECIPIENT_EMAIL');
     const sender = this.configService.get<string>('GMAIL_USER');
