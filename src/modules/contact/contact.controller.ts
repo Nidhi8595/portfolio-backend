@@ -10,6 +10,7 @@ export class ContactController {
   @Post()
   @HttpCode(HttpStatus.OK)
   async sendMessage(@Body() dto: ContactDto) {
+      console.log('📬 Contact controller hit, body:', JSON.stringify(dto));
     return this.contactService.sendMessage(dto);
   }
 }

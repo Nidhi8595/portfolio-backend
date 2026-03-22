@@ -36,39 +36,41 @@ export class ContactService {
 
   constructor(private configService: ConfigService) {
 
-  const gmailUser = this.configService.get<string>('GMAIL_USER');
-  const gmailPass = this.configService.get<string>('GMAIL_PASS');
-  const recipient = this.configService.get<string>('RECIPIENT_EMAIL');
+    const gmailUser = this.configService.get<string>('GMAIL_USER');
+    const gmailPass = this.configService.get<string>('GMAIL_PASS');
+    const recipient = this.configService.get<string>('RECIPIENT_EMAIL');
 
-  // These will appear in Render logs on every startup
-  console.log('=== CONTACT SERVICE INIT ===');
-  console.log('GMAIL_USER:      ', gmailUser      ?? 'UNDEFINED ❌');
-  console.log('GMAIL_PASS:      ', gmailPass      ? 'LOADED ✅' : 'UNDEFINED ❌');
-  console.log('RECIPIENT_EMAIL: ', recipient      ?? 'UNDEFINED ❌');
-  console.log('============================');
+    // These will appear in Render logs on every startup
+    console.log('=== CONTACT SERVICE INIT ===');
+    console.log('GMAIL_USER:      ', gmailUser ?? 'UNDEFINED ❌');
+    console.log('GMAIL_PASS:      ', gmailPass ? 'LOADED ✅' : 'UNDEFINED ❌');
+    console.log('RECIPIENT_EMAIL: ', recipient ?? 'UNDEFINED ❌');
+    console.log('============================');
 
-  this.transporter = nodemailer.createTransport({
-    host:   'smtp.gmail.com',
-    port:   465,
-    secure: true,
-    auth: {
-      user: gmailUser,
-      pass: gmailPass,
-    },
-    tls: { rejectUnauthorized: false }
-  });
+    this.transporter = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true,
+      auth: {
+        user: gmailUser,
+        pass: gmailPass,
+      },
+      tls: { rejectUnauthorized: false }
+    });
 
-  this.transporter.verify((error) => {
-    if (error) {
-      console.log('SMTP VERIFY FAILED ❌:', error.message);
-    } else {
-      console.log('SMTP VERIFY SUCCESS ✅ — ready to send emails');
-    }
-  });
-}
+    this.transporter.verify((error) => {
+      if (error) {
+        console.log('SMTP VERIFY FAILED ❌:', error.message);
+      } else {
+        console.log('SMTP VERIFY SUCCESS ✅ — ready to send emails');
+      }
+    });
+  }
   async sendMessage(dto: ContactDto): Promise<{ success: boolean; message: string }> {
     const recipient = this.configService.get<string>('RECIPIENT_EMAIL');
     const sender = this.configService.get<string>('GMAIL_USER');
+    console.log('📨 sendMessage called for:', dto.email);
+    console.log('Sending from:', sender, '→ to:', recipient);
 
     try {
       // Email YOU receive — the visitor's message
@@ -210,11 +212,11 @@ export class ContactService {
     }
     // } catch (error) {
     //   this.logger.error('❌ Failed to send email:', error);
-      catch (error: any) {
-  console.log('EMAIL ERROR CODE:   ', error.code);
-  console.log('EMAIL ERROR MESSAGE:', error.message);
-  console.log('EMAIL ERROR COMMAND:', error.command);
-  console.log('FULL ERROR:        ', JSON.stringify(error, null, 2));
+    catch (error: any) {
+      console.log('EMAIL ERROR CODE:   ', error.code);
+      console.log('EMAIL ERROR MESSAGE:', error.message);
+      console.log('EMAIL ERROR COMMAND:', error.command);
+      console.log('FULL ERROR:        ', JSON.stringify(error, null, 2));
 
 
       return {
