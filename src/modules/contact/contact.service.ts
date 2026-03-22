@@ -1,38 +1,48 @@
-import { Injectable, Logger }   from '@nestjs/common';
-import { ConfigService }        from '@nestjs/config';
-import { ContactDto }           from './contact.dto';
-import * as nodemailer          from 'nodemailer';
+import { Injectable, Logger } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
+import { ContactDto } from './contact.dto';
+import * as nodemailer from 'nodemailer';
 
 @Injectable()
 export class ContactService {
 
-  private readonly logger      = new Logger(ContactService.name);
+  private readonly logger = new Logger(ContactService.name);
   private readonly transporter: nodemailer.Transporter;
 
   constructor(private configService: ConfigService) {
- 
+
     // Create reusable transporter using Gmail SMTP
     this.transporter = nodemailer.createTransport({
-      service: 'gmail',
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true,           // true for port 465 (SSL)
       auth: {
         user: this.configService.get<string>('GMAIL_USER'),
         pass: this.configService.get<string>('GMAIL_PASS'),
       },
       tls: {
-    rejectUnauthorized: false  // ← add this if getting TLS errors
-  }
+        rejectUnauthorized: false
+      }
     });
+
+     this.transporter.verify((error, success) => {
+    if (error) {
+      this.logger.error('SMTP connection failed:', error.message);
+    } else {
+      this.logger.log('SMTP connection verified — ready to send emails');
+    }
+  });
   }
 
   async sendMessage(dto: ContactDto): Promise<{ success: boolean; message: string }> {
     const recipient = this.configService.get<string>('RECIPIENT_EMAIL');
-    const sender    = this.configService.get<string>('GMAIL_USER');
+    const sender = this.configService.get<string>('GMAIL_USER');
 
     try {
       // Email YOU receive — the visitor's message
       await this.transporter.sendMail({
-        from:    `"Portfolio Contact" <${sender}>`,
-        to:      recipient,
+        from: `"Portfolio Contact" <${sender}>`,
+        to: recipient,
         subject: `📬 New message from ${dto.name} — Portfolio`,
         html: `
           <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
@@ -99,8 +109,8 @@ export class ContactService {
 
       // Auto-reply to the person who contacted you
       await this.transporter.sendMail({
-        from:    `"Neelakshi" <${sender}>`,
-        to:      dto.email,
+        from: `"Neelakshi" <${sender}>`,
+        to: dto.email,
         subject: `Got your message! — Neelakshi`,
         html: `
           <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
