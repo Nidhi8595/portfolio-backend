@@ -5,6 +5,7 @@ import { EducationModule } from './modules/education/education.module';
 import { CertificationsModule } from './modules/certifications/certifications.module';
 import { ContactModule } from './modules/contact/contact.module';
 import { ConfigModule }         from '@nestjs/config';
+import { HealthController }   from './health.controller';
 
 
 // AppModule is the root module — it imports every feature module
@@ -16,8 +17,8 @@ import { ConfigModule }         from '@nestjs/config';
     SkillsModule,
     EducationModule,
     CertificationsModule,
-    ContactModule
-    // We will add EducationModule, ContactModule here in later steps
-  ],
+    ContactModule,
+      ],
+  controllers: [HealthController],
 })
 export class AppModule {}
