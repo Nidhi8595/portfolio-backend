@@ -1,9 +1,3 @@
-import * as dns from 'dns';
-
-// Force IPv4 — prevents ENETUNREACH on Render (IPv6 blocked)
-dns.setDefaultResultOrder('ipv4first');
-
-
 import { NestFactory } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';
 import { AppModule } from './app.module';

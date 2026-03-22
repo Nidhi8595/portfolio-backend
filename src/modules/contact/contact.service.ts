@@ -1,232 +1,155 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
-import { ContactDto } from './contact.dto';
-import * as nodemailer from 'nodemailer';
+import { ConfigService }      from '@nestjs/config';
+import { ContactDto }         from './contact.dto';
+import { Resend }             from 'resend';
 
 @Injectable()
 export class ContactService {
 
   private readonly logger = new Logger(ContactService.name);
-  private readonly transporter: nodemailer.Transporter;
-
-  // constructor(private configService: ConfigService) {
-
-  //   // Create reusable transporter using Gmail SMTP
-  //   this.transporter = nodemailer.createTransport({
-  //     host: 'smtp.gmail.com',
-  //     port: 465,
-  //     secure: true,           // true for port 465 (SSL)
-  //     auth: {
-  //       user: this.configService.get<string>('GMAIL_USER'),
-  //       pass: this.configService.get<string>('GMAIL_PASS'),
-  //     },
-  //     tls: {
-  //       rejectUnauthorized: false
-  //     }
-  //   });
-
-  //    this.transporter.verify((error, success) => {
-  //   if (error) {
-  //     this.logger.error('SMTP connection failed:', error.message);
-  //   } else {
-  //     this.logger.log('SMTP connection verified — ready to send emails');
-  //   }
-  // });
-  // }
+  private readonly resend: Resend;
+  private readonly recipient: string;
+  private readonly senderName = 'Neelakshi Portfolio';
 
   constructor(private configService: ConfigService) {
+    const apiKey       = this.configService.get<string>('RESEND_API_KEY');
+    this.recipient     = this.configService.get<string>('RECIPIENT_EMAIL')
+                         ?? 'neelakshikadyan@gmail.com';
 
-    const gmailUser = this.configService.get<string>('GMAIL_USER');
-    const gmailPass = this.configService.get<string>('GMAIL_PASS');
-    const recipient = this.configService.get<string>('RECIPIENT_EMAIL');
+    this.resend = new Resend(apiKey);
 
-    // These will appear in Render logs on every startup
-    console.log('=== CONTACT SERVICE INIT ===');
-    console.log('GMAIL_USER:      ', gmailUser ?? 'UNDEFINED ❌');
-    console.log('GMAIL_PASS:      ', gmailPass ? 'LOADED ✅' : 'UNDEFINED ❌');
-    console.log('RECIPIENT_EMAIL: ', recipient ?? 'UNDEFINED ❌');
-    console.log('============================');
-
-    
-this.transporter = nodemailer.createTransport({
-    host:   '74.125.28.108',  // gmail smtp IPv4 direct — bypasses IPv6 DNS
-
-  port:   587,
-  secure: false,
-  auth: {
-    user: gmailUser,
-    pass: gmailPass,
-  },
-  tls: {
-    rejectUnauthorized: false,
-        servername: 'smtp.gmail.com', // needed when using IP instead of hostname
-
-  },
-} as nodemailer.TransportOptions);
-    this.transporter.verify((error) => {
-      if (error) {
-        console.log('SMTP VERIFY FAILED ❌:', error.message);
-      } else {
-        console.log('SMTP VERIFY SUCCESS ✅ — ready to send emails');
-      }
-    });
+    console.log('=== RESEND INIT ===');
+    console.log('API KEY:   ', apiKey ? 'LOADED ✅' : 'MISSING ❌');
+    console.log('RECIPIENT: ', this.recipient);
+    console.log('==================');
   }
+
   async sendMessage(dto: ContactDto): Promise<{ success: boolean; message: string }> {
-    const recipient = this.configService.get<string>('RECIPIENT_EMAIL');
-    const sender = this.configService.get<string>('GMAIL_USER');
+
     console.log('📨 sendMessage called for:', dto.email);
-    console.log('Sending from:', sender, '→ to:', recipient);
 
     try {
-      // Email YOU receive — the visitor's message
-      await this.transporter.sendMail({
-        from: `"Portfolio Contact" <${sender}>`,
-        to: recipient,
+
+      // Email YOU receive
+      await this.resend.emails.send({
+        from:    `${this.senderName} <onboarding@resend.dev>`,
+        to:      [this.recipient],
         subject: `📬 New message from ${dto.name} — Portfolio`,
         html: `
-          <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
-
-            <div style="background: linear-gradient(135deg, #2479ad, #7c3aed);
-                        padding: 24px; border-radius: 12px 12px 0 0;">
-              <h1 style="color: white; margin: 0; font-size: 1.4rem;">
+          <div style="font-family:sans-serif;max-width:600px;margin:0 auto;">
+            <div style="background:linear-gradient(135deg,#2479ad,#7c3aed);
+                        padding:24px;border-radius:12px 12px 0 0;">
+              <h1 style="color:white;margin:0;font-size:1.4rem;">
                 📬 New Portfolio Message
               </h1>
             </div>
-
-            <div style="background: #f9fafb; padding: 24px;
-                        border: 1px solid #e5e7eb; border-top: none;
-                        border-radius: 0 0 12px 12px;">
-
-              <table style="width: 100%; border-collapse: collapse;">
+            <div style="background:#f9fafb;padding:24px;
+                        border:1px solid #e5e7eb;border-top:none;
+                        border-radius:0 0 12px 12px;">
+              <table style="width:100%;border-collapse:collapse;">
                 <tr>
-                  <td style="padding: 10px 0; color: #6b7280;
-                              font-size: 0.85rem; width: 80px;">
-                    Name
-                  </td>
-                  <td style="padding: 10px 0; font-weight: 600; color: #111827;">
-                    ${dto.name}
-                  </td>
+                  <td style="padding:10px 0;color:#6b7280;
+                             font-size:0.85rem;width:80px;">Name</td>
+                  <td style="padding:10px 0;font-weight:600;
+                             color:#111827;">${dto.name}</td>
                 </tr>
-                <tr style="border-top: 1px solid #e5e7eb;">
-                  <td style="padding: 10px 0; color: #6b7280; font-size: 0.85rem;">
-                    Email
-                  </td>
-                  <td style="padding: 10px 0;">
+                <tr style="border-top:1px solid #e5e7eb;">
+                  <td style="padding:10px 0;color:#6b7280;
+                             font-size:0.85rem;">Email</td>
+                  <td style="padding:10px 0;">
                     <a href="mailto:${dto.email}"
-                       style="color: #7c3aed; text-decoration: none;">
+                       style="color:#7c3aed;text-decoration:none;">
                       ${dto.email}
                     </a>
                   </td>
                 </tr>
-                <tr style="border-top: 1px solid #e5e7eb;">
-                  <td style="padding: 10px 0; color: #6b7280;
-                              font-size: 0.85rem; vertical-align: top;">
+                <tr style="border-top:1px solid #e5e7eb;">
+                  <td style="padding:10px 0;color:#6b7280;
+                             font-size:0.85rem;vertical-align:top;">
                     Message
                   </td>
-                  <td style="padding: 10px 0; color: #111827;
-                              line-height: 1.6; white-space: pre-wrap;">
+                  <td style="padding:10px 0;color:#111827;
+                             line-height:1.6;white-space:pre-wrap;">
                     ${dto.message}
                   </td>
                 </tr>
               </table>
-
-              <div style="margin-top: 20px; padding-top: 16px;
-                          border-top: 1px solid #e5e7eb;">
-                <a href="mailto:${dto.email}?subject=Re: Your message on my portfolio"
-                   style="display: inline-block; background: #7c3aed;
-                          color: white; padding: 10px 20px;
-                          border-radius: 8px; text-decoration: none;
-                          font-weight: 600; font-size: 0.9rem;">
+              <div style="margin-top:20px;padding-top:16px;
+                          border-top:1px solid #e5e7eb;">
+                <a href="mailto:${dto.email}?subject=Re: Your portfolio message"
+                   style="display:inline-block;background:#7c3aed;color:white;
+                          padding:10px 20px;border-radius:8px;
+                          text-decoration:none;font-weight:600;">
                   Reply to ${dto.name}
                 </a>
               </div>
-
             </div>
           </div>
         `,
       });
 
-      // Auto-reply to the person who contacted you
-      await this.transporter.sendMail({
-        from: `"Neelakshi" <${sender}>`,
-        to: dto.email,
+      // Auto-reply to visitor
+      await this.resend.emails.send({
+        from:    `Neelakshi <onboarding@resend.dev>`,
+        to:      [dto.email],
         subject: `Got your message! — Neelakshi`,
         html: `
-          <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
-
-            <div style="background: linear-gradient(135deg, #2479ad, #7c3aed);
-                        padding: 24px; border-radius: 12px 12px 0 0;">
-              <h1 style="color: white; margin: 0; font-size: 1.4rem;">
+          <div style="font-family:sans-serif;max-width:600px;margin:0 auto;">
+            <div style="background:linear-gradient(135deg,#2479ad,#7c3aed);
+                        padding:24px;border-radius:12px 12px 0 0;">
+              <h1 style="color:white;margin:0;font-size:1.4rem;">
                 Hey ${dto.name}! 👋
               </h1>
             </div>
-
-            <div style="background: #f9fafb; padding: 24px;
-                        border: 1px solid #e5e7eb; border-top: none;
-                        border-radius: 0 0 12px 12px;">
-
-              <p style="color: #374151; line-height: 1.7; margin-top: 0;">
+            <div style="background:#f9fafb;padding:24px;
+                        border:1px solid #e5e7eb;border-top:none;
+                        border-radius:0 0 12px 12px;">
+              <p style="color:#374151;line-height:1.7;margin-top:0;">
                 Thanks for reaching out through my portfolio!
                 I've received your message and will get back
-                to you as soon as possible — usually within 24 hours.
+                to you soon — usually within 24 hours.
               </p>
-
-              <div style="background: #fff; border: 1px solid #e5e7eb;
-                          border-radius: 8px; padding: 16px; margin: 20px 0;">
-                <p style="color: #6b7280; font-size: 0.82rem;
-                           margin: 0 0 8px 0; text-transform: uppercase;
-                           letter-spacing: 0.06em;">
-                  Your message
-                </p>
-                <p style="color: #374151; margin: 0;
-                           line-height: 1.6; white-space: pre-wrap;">
+              <div style="background:#fff;border:1px solid #e5e7eb;
+                          border-radius:8px;padding:16px;margin:20px 0;">
+                <p style="color:#6b7280;font-size:0.82rem;
+                           margin:0 0 8px 0;text-transform:uppercase;
+                           letter-spacing:0.06em;">Your message</p>
+                <p style="color:#374151;margin:0;
+                           line-height:1.6;white-space:pre-wrap;">
                   ${dto.message}
                 </p>
               </div>
-
-              <p style="color: #374151; line-height: 1.7;">
-                In the meantime feel free to check out my work:
-              </p>
-
-              <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+              <div style="display:flex;gap:12px;flex-wrap:wrap;">
                 <a href="https://github.com/Nidhi8595"
-                   style="color: #7c3aed; text-decoration: none;
-                           font-weight: 600;">GitHub →</a>
+                   style="color:#7c3aed;text-decoration:none;font-weight:600;">
+                  GitHub →
+                </a>
                 <a href="https://www.linkedin.com/in/neelakshi-2b3725321/"
-                   style="color: #7c3aed; text-decoration: none;
-                           font-weight: 600;">LinkedIn →</a>
+                   style="color:#7c3aed;text-decoration:none;font-weight:600;">
+                  LinkedIn →
+                </a>
               </div>
-
-              <p style="color: #6b7280; font-size: 0.85rem;
-                         margin-top: 24px; padding-top: 16px;
-                         border-top: 1px solid #e5e7eb;">
-                — Neelakshi<br>
-                Full Stack Developer
+              <p style="color:#6b7280;font-size:0.85rem;margin-top:24px;
+                         padding-top:16px;border-top:1px solid #e5e7eb;">
+                — Neelakshi<br>Full Stack Developer
               </p>
             </div>
           </div>
         `,
       });
 
-      this.logger.log(`✅ Email sent successfully from ${dto.name} <${dto.email}>`);
+      this.logger.log(`✅ Email sent to ${this.recipient} and auto-reply to ${dto.email}`);
 
       return {
         success: true,
         message: `Message received! I'll get back to you at ${dto.email} soon.`
       };
-    }
-    // } catch (error) {
-    //   this.logger.error('❌ Failed to send email:', error);
-    catch (error: any) {
-      console.log('EMAIL ERROR CODE:   ', error.code);
-      console.log('EMAIL ERROR MESSAGE:', error.message);
-      console.log('EMAIL ERROR COMMAND:', error.command);
-      console.log('FULL ERROR:        ', JSON.stringify(error, null, 2));
 
-
+    } catch (error: any) {
+      console.log('RESEND ERROR:', error?.message ?? JSON.stringify(error));
       return {
         success: false,
-        message: 'Something went wrong sending the email. Please try again or email me directly.'
+        message: 'Something went wrong. Please email me directly at neelakshikadyan@gmail.com'
       };
     }
   }
