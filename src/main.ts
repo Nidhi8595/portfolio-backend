@@ -8,6 +8,17 @@ async function bootstrap() {
   // Global prefix — all routes will be /api/...
   // e.g. GET /api/projects, GET /api/skills
   app.setGlobalPrefix('api');
+  // Handle preflight OPTIONS requests globally
+app.use((req: any, res: any, next: any) => {
+  if (req.method === 'OPTIONS') {
+    res.header('Access-Control-Allow-Origin', req.headers.origin || '*');
+    res.header('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Accept');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    return res.sendStatus(204);
+  }
+  next();
+});
 
   // Enable CORS so your Angular app (localhost:4200) can call this API
   app.enableCors({
@@ -30,8 +41,12 @@ async function bootstrap() {
 
     callback(isAllowed ? null : new Error('Not allowed by CORS'), isAllowed);
   },
-    methods: ['GET', 'POST'],
-    credentials: true,
+    methods:          ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders:   ['Content-Type', 'Accept', 'Authorization'],
+  exposedHeaders:   ['Content-Type'],
+  credentials:      true,
+  preflightContinue: false,
+  optionsSuccessStatus: 204,
   });
 
   // Global validation pipe
@@ -45,6 +60,7 @@ async function bootstrap() {
   );
 
   const port = process.env.PORT ?? 3000;
+  
   await app.listen(port);
 
   console.log(`Portfolio API running on http://localhost:${port}/api`);
