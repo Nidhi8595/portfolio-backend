@@ -47,17 +47,21 @@ export class ContactService {
     console.log('RECIPIENT_EMAIL: ', recipient ?? 'UNDEFINED ❌');
     console.log('============================');
 
-    this.transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
-      port: 465,
-      secure: true,
-      auth: {
-        user: gmailUser,
-        pass: gmailPass,
-      },
-      tls: { rejectUnauthorized: false }
-    });
-
+    
+this.transporter = nodemailer.createTransport({
+  host:   'smtp.gmail.com',
+  port:   587,
+  secure: false,
+  auth: {
+    user: gmailUser,
+    pass: gmailPass,
+  },
+  tls: {
+    rejectUnauthorized: false,
+    ciphers: 'SSLv3'
+  },
+  family: 4,
+} as nodemailer.TransportOptions);
     this.transporter.verify((error) => {
       if (error) {
         console.log('SMTP VERIFY FAILED ❌:', error.message);
