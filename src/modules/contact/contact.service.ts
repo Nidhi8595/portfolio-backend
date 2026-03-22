@@ -17,16 +17,11 @@ export class ContactService {
                          ?? 'neelakshikadyan@gmail.com';
 
     this.resend = new Resend(apiKey);
-
-    console.log('=== RESEND INIT ===');
-    console.log('API KEY:   ', apiKey ? 'LOADED ✅' : 'MISSING ❌');
-    console.log('RECIPIENT: ', this.recipient);
-    console.log('==================');
   }
 
   async sendMessage(dto: ContactDto): Promise<{ success: boolean; message: string }> {
 
-    console.log('📨 sendMessage called for:', dto.email);
+    
 
     try {
 
