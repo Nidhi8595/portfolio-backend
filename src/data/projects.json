@@ -1,6 +1,38 @@
 [
   {
     "id": 1,
+    "title": "SkillForage",
+    "description": "AI-Driven Skill Gap Analyzer & Learning Roadmap Generator",
+    "image": "Skillforage.png",
+    "liveUrl": "https://skill-forage-fe.vercel.app/",
+    "githubUrl": "https://github.com/Nidhi8595/SkillForage-be",
+    "skills": [
+      "Angular",
+      "NestJS",
+      "TypeScript", 
+      "Tailwind",
+      "Node.js",
+      "CSS",
+      "SCSS",
+      "APIs",
+      "Deployment",
+      "Authentication",
+      "Render",
+      "Vercel",
+      "Github",
+      "Git",
+      "VS Code",
+      "Postman",
+      "Insomnia",
+      "Testing",
+      "Swagger API",
+      "GSAP",
+      "Pdf-parser",
+      "Groq AI"
+    ]
+  },
+  {
+    "id": 2,
     "title": "DevPulse",
     "description": "A comprehensive developer dashboard for tracking latest tech updates from 8 sources",
     "image": "DevPulse.png",
@@ -28,7 +60,7 @@
     ]
   },
   {
-    "id": 2,
+    "id": 3,
     "title": "MarkSphere",
     "description": "Save your bookmarks efficiently with a full-stack bookmark manager",
     "image": "MarkSphere.png",
@@ -58,7 +90,7 @@
     ]
   },
   {
-    "id": 3,
+    "id": 4,
     "title": "Personal Portfolio Website",
     "description": "Showcase your skills and projects in a professional manner",
     "image": "Portfolio.png",
@@ -76,7 +108,7 @@
     ]
   },
   {
-    "id": 4,
+    "id": 5,
     "title": "Scalable Notes App",
     "description": "Full-stack notes application with scalable REST API backend",
     "image": "NotesApp.png",
@@ -103,7 +135,7 @@
     ]
   },
   {
-    "id": 5,
+    "id": 6,
     "title": "Weather Snapshots",
     "description": "Real-time weather app with location-based forecasts",
     "image": "WeatherApp.png",
@@ -122,7 +154,7 @@
     ]
   },
   {
-    "id": 6,
+    "id": 7,
     "title": "Post Conversation Analysis",
     "description": "Django-powered tool for analysing post conversation data",
     "image": "DjangoP.png",
@@ -143,7 +175,7 @@
     ]
   },
   {
-    "id": 7,
+    "id": 8,
     "title": "Premier Model Management Clone",
     "description": "A clone of the Premier Model Management platform",
     "image": "Premier.png",
@@ -161,7 +193,7 @@
     ]
   },
   {
-    "id": 8,
+    "id": 9,
     "title": "SidCup Family Golf Clone",
     "description": "A clone of the SidCup Family Golf platform",
     "image": "SidCup.png",
@@ -179,7 +211,7 @@
     ]
   },
   {
-    "id": 9,
+    "id": 10,
     "title": "Myntra Website Clone",
     "description": "A clone of the Myntra website",
     "image": "Myntra.png",
@@ -197,7 +229,7 @@
     ]
   },
   {
-    "id": 10,
+    "id": 11,
     "title": "University website Clone",
     "description": "A clone of the University website",
     "image": "Gbu.png",
@@ -213,7 +245,7 @@
       "CSS"
     ]
   },{
-    "id": 11,
+    "id": 12,
     "title": "Dribbble website Clone",
     "description": "A clone of the Dribbble website",
     "image": "Dribbble.png",
@@ -231,7 +263,7 @@
     ]
   },
   {
-    "id": 12,
+    "id": 13,
     "title": "AgeBloom (Age Calculator)",
     "description": "calculating age",
     "image": "AgeBloom.png",
@@ -249,7 +281,7 @@
     ]
   },
   {
-    "id": 13,
+    "id": 14,
     "title": "SmartCalc (Calculator App)",
     "description": "calculater app with basic and scientific functions",
     "image": "SmartCalc.png",
@@ -267,7 +299,7 @@
     ]
   },
   {
-    "id": 14,
+    "id": 15,
     "title": "Whiskers & Wildflowers Gallery",
     "description": "A gallery for showcasing whiskers and wildflowers",
     "image": "PhotoGallery.png",
@@ -285,7 +317,7 @@
     ]
   },
   {
-    "id": 15,
+    "id": 16,
     "title": "Live Search",
     "description": "A live search feature for real-time search results",
     "image": "Search Bar.png",
@@ -303,7 +335,7 @@
     ]
   },
   {
-    "id": 16,
+    "id": 17,
     "title": "Progress Bar",
     "description": "A progress bar that specifies the loading percentage",
     "image": "Progress Bar.png",
@@ -321,7 +353,7 @@
     ]
   },
   {
-    "id": 17,
+    "id": 18,
     "title": "Swap Images",
     "description": "A feature to swap images on hover",
     "image": "Swap images.png",
@@ -339,7 +371,7 @@
     ]
   },
   {
-    "id": 18,
+    "id": 19,
     "title": "Add or Remove Items",
     "description": "A feature to add or remove items from a list",
     "image": "Add or Remove.png",
@@ -357,7 +389,7 @@
     ]
   },
   {
-    "id": 19,
+    "id": 20,
     "title": "Netflix GPT",
     "description": "AI-powered Netflix clone with GPT movie recommendations",
     "image": "Netflix.png",

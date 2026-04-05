@@ -17,10 +17,10 @@
   },
   {
     "category": "Tools & Platforms",
-    "items": ["GitHub", "Firebase", "Render", "Vercel", "Docker", "AWS", "ClaudeAI", "Git","Canva" ,"VS Code", "Postman", "Insomnia","Github Pages"]
+    "items": ["GitHub", "Firebase", "Render", "Vercel", "Docker", "AWS", "ClaudeAI", "Git","Canva" ,"VS Code", "Postman", "Insomnia","Github Pages","Swagger API"]
   },
   {
     "category": "Other Concepts",
-    "items": ["APIs", "Authentication", "OOPs", "Data Structures", "Cloud Basics", "Cybersec Basics", "Design Thinking", "PrismaORM", "Testing", "Deployment"]
+    "items": ["APIs", "AI integration","Authentication", "OOPs", "Data Structures", "Cloud Basics", "Cybersec Basics", "Design Thinking", "PrismaORM", "Testing", "Deployment"]
   }
 ]
