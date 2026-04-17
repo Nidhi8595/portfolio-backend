@@ -5,7 +5,7 @@
   },
   {
     "category": "Frontend",
-    "items": ["HTML", "CSS", "TypeScript", "React.js", "Redux.js", "Tailwind", "Angular.js"]
+    "items": ["HTML", "CSS", "TypeScript", "React.js", "Redux.js", "Tailwind", "Angular.js","Next.js"]
   },
   {
     "category": "Backend",
@@ -21,6 +21,6 @@
   },
   {
     "category": "Other Concepts",
-    "items": ["APIs", "AI integration","Authentication", "OOPs", "Data Structures", "Cloud Basics", "Cybersec Basics", "Design Thinking", "PrismaORM", "Testing", "Deployment"]
+    "items": ["APIs", "AI integration","Authentication", "OOPs", "Data Structures", "Cloud Basics", "Cybersec Basics", "Design Thinking", "PrismaORM", "Testing", "Deployment","GraphQL"]
   }
 ]

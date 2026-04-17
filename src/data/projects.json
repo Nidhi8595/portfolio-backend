@@ -1,6 +1,35 @@
 [
   {
     "id": 1,
+    "title": "AutoBackend",
+    "description": "AI-Driven Graphql Schema Generator ",
+    "image": "auto.png",
+    "liveUrl": "https://auto-backend-pi.vercel.app/",
+    "githubUrl": "https://github.com/Nidhi8595/AutoBackend",
+    "skills": [
+      "Next.js",
+      "GraphQL",
+      "SupaBase",
+      "TypeScript",
+      "Swagger API",
+      "Cohere AI", 
+      "Tailwind",
+      "CSS",
+      "APIs",
+      "Deployment",
+      "Authentication",
+      "OAuth",
+      "Vercel",
+      "Github",
+      "Git",
+      "VS Code",
+      "Postman",
+      "Insomnia",
+      "Testing"
+    ]
+  },
+  {
+    "id": 1,
     "title": "SkillForage",
     "description": "AI-Driven Skill Gap Analyzer & Learning Roadmap Generator",
     "image": "Skillforage.png",
