@@ -25,7 +25,7 @@ app.use((req: any, res: any, next: any) => {
     origin: (origin, callback) => {
     const allowed = [
       'http://localhost:4200',       // Angular dev server
-,'https://portfolio.neelakshikadyan.workers.dev/',
+          'https://portfolio.neelakshikadyan.workers.dev/',
 
       'https://portfolio-backend-yltt.onrender.com'  // Replace with your deployed URL later
       ,'https://portfolio-gules-psi-64.vercel.app/',
