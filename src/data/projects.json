@@ -3,7 +3,7 @@
     "id": 1,
     "title": "AutoBackend",
     "description": "AI-Driven Graphql Schema Generator ",
-    "image": "auto.png",
+    "image": "autoback.png",
     "liveUrl": "https://auto-backend-pi.vercel.app/",
     "githubUrl": "https://github.com/Nidhi8595/AutoBackend",
     "skills": [
